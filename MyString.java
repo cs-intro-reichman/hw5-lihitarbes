@@ -49,6 +49,12 @@ public class MyString {
             if( countChar(str2, c) > countChar(str1, c)){
                 return false;
             }
+            int j = 0;
+            while(str2.charAt(i) != str1.charAt(j)){
+                j++;
+                
+            }
+            return false;
          }
         return true;
     }
@@ -66,7 +72,7 @@ public class MyString {
         if(str.length() == 0){
             return "";
         }
-        for (int i = 0; i < str.length(); i++ ){
+        for (int i = 0; i < str.length()-1; i++ ){
             newword = newword + str.charAt(i) + " ";
 
         }
