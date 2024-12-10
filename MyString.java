@@ -49,7 +49,7 @@ public class MyString {
          for( int i=0; i < str1.length(); i++){
             j = 0;
             isSub = false;
-            while(j < str2.length()&& isSub){
+            while(j < str2.length() && !isSub){
              if(str1.charAt(i) == str2.charAt(j)){
                 isSub = true;
              }
