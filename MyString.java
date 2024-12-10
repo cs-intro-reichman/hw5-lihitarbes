@@ -72,8 +72,8 @@ public class MyString {
         if(str.length() == 0){
             return "";
         }
-        for (int i = 0; i < str.length()-1; i++ ){
-            newword = newword + str.charAt(i) + " ";
+        for (int i = 0; i < str.length(); i++ ){
+            newword = newword + str.charAt(i-1) + " ";
 
         }
 
