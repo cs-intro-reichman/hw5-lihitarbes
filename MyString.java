@@ -83,7 +83,7 @@ public class MyString {
             newword = newword + str.charAt(i) + " ";
 
         }
-    newword = newword + str.charAt(str.length()-1)
+        newword = newword + str.charAt(str.length()-1);
         return newword;
     }
   
