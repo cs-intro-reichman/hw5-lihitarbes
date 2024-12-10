@@ -44,20 +44,27 @@ public class MyString {
         if ( str2.length() < str1.length()){
             return false;
         }
-         for( int i=0; i < str2.length(); i++){
-            char c = str2.charAt(i);
-            if( countChar(str2, c) > countChar(str1, c)){
-                return false;
-            }
-            int j = 0;
-            while(str2.charAt(i) != str1.charAt(j)){
-                j++;
+        int j = 0;
+        boolean isSub = false;
+         for( int i=0; i < str1.length(); i++){
+            j = 0;
+            isSub = false;
+            while(j < str2.length()&& isSub){
+             if(str1.charAt(i) == str2.charAt(j)){
+                isSub = true;
+             }
+               j++;
                 
             }
-            return false;
+            if(!isSub){
+                return false;
+            }
+            str2 = str2.substring(0, j-1) + str2.substring(j);
+            }
+            return true;
          }
-        return true;
-    }
+        
+   
 
     /** Returns a string which is the same as the given string, with a space
      * character inserted after each character in the given string, except
@@ -72,11 +79,11 @@ public class MyString {
         if(str.length() == 0){
             return "";
         }
-        for (int i = 0; i < str.length(); i++ ){
-            newword = newword + str.charAt(i-1) + " ";
+        for (int i = 0; i < str.length()-1; i++ ){
+            newword = newword + str.charAt(i) + " ";
 
         }
-
+    newword = newword + str.charAt(str.length()-1)
         return newword;
     }
   
