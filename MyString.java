@@ -41,7 +41,7 @@ public class MyString {
      * @return true is str1 is a subset of str2, false otherwise
      */
     public static boolean subsetOf(String str1, String str2) {
-        if ( str2.length() > str1.length()){
+        if ( str2.length() < str1.length()){
             return false;
         }
          for( int i=0; i < str2.length(); i++){
@@ -67,7 +67,7 @@ public class MyString {
             return "";
         }
         for (int i = 0; i < str.length(); i++ ){
-            newword = str.charAt(i) + " ";
+            newword = newword + str.charAt(i) + " ";
 
         }
 
@@ -85,7 +85,7 @@ public class MyString {
      * @return a randomly generated string, consisting of 'n' lowercase letters
      */
     public static String randomStringOfLetters(int n) {
-        String word = " ";
+        String word = "";
         for ( int i = 0; i < n; i++){
           int letter =(int)((Math.random()) * 26) + 97;
           word = word + (char)letter ;
