@@ -105,7 +105,7 @@ public class Scrabble {
 			// end-of-line characters.
 			
 			String input = in.readString();
-			if (input == "."){
+			if (input.equals(".")){
 				break;
 			   }
 
@@ -118,13 +118,10 @@ public class Scrabble {
 					} 
 					else{
 						score = score + wordScore(input);
-						System.out.println( input + "earned" + wordScore(input) + " points. score: " + score + " points\n");
+						System.out.println( input + " earned " + wordScore(input) + " points. score: " + score + " points\n");
 						hand = MyString.remove(hand, input);
 					}
-			}
-		
-			
-				
+			}	
 		}
 		if (hand.length() == 0) {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
@@ -164,7 +161,7 @@ public class Scrabble {
 		////testScrabbleScore();    
 		////testCreateHands();  
 		////testPlayHands();
-		////playGame();
+		playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
