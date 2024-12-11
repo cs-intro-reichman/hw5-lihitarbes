@@ -52,7 +52,7 @@ public class Scrabble {
 	// Checks if the given word is in the dictionary.
 	public static boolean isWordInDictionary(String word) {
 		for (int i = 0; i < DICTIONARY.length; i++){
-			if (word == DICTIONARY[i]){
+			if (word.equals(DICTIONARY[i])){
 				return true;
 			}
 		}
@@ -67,12 +67,12 @@ public class Scrabble {
 		for (int i = 0; i < word.length(); i++){
 			point = point + SCRABBLE_LETTER_VALUES[word.charAt(i) - 97];
 		}
+		point = point*word.length();
 			if (word.length() == HAND_SIZE) {
 				point = point + 50;
+			}
 			if (MyString.subsetOf(word, "runi")) {
 				point = point + 1000;
-			}
-				
 			}
 		return point;
 	}
@@ -110,12 +110,20 @@ public class Scrabble {
 			   }
 
 			if(!MyString.subsetOf(input, hand)){
-				break;
+				System.out.println( "Invalid word. Try again.");
 			}
-			if (!isWordInDictionary(input)){
-				break;	
-				}
-			score = score + wordScore(input);
+			else{
+				if (!isWordInDictionary(input)){
+					System.out.println("No such word in the dictinoary. Try again.");	
+					} 
+					else{
+						score = score + wordScore(input);
+						System.out.println( input + "earned" + wordScore(input) + " points. score: " + score + " points\n");
+						hand = MyString.remove(hand, input);
+					}
+			}
+		
+			
 				
 		}
 		if (hand.length() == 0) {
@@ -139,12 +147,12 @@ public class Scrabble {
 			// Gets the user's input, which is all the characters entered by 
 			// the user until the user enter the ENTER character.
 			String input = in.readString();
-			if (input == "e"){
+			if (input.equals("e")){
 				break;
 			}
-			if (input == "n"){
+			if (input.equals("n")){
 		    String newWord = createHand();
-			playHand(input);
+			playHand(newWord);
 			}
 		}
 
