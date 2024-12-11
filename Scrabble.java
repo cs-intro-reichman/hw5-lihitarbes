@@ -71,7 +71,7 @@ public class Scrabble {
 			if (word.length() == HAND_SIZE) {
 				point = point + 50;
 			}
-			if (MyString.subsetOf(word, "runi")) {
+			if (MyString.subsetOf("runi",word)) {
 				point = point + 1000;
 			}
 		return point;
